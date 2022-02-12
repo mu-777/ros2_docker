@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  foxy_desktop:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - /etc/group:/etc/group:ro
+      - /etc/passwd:/etc/passwd:ro
+    user: "${UID}:${GID}"
