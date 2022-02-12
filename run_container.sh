@@ -1,2 +1,4 @@
 #!/bin/bash
-docker-compose run -e LOCAL_UID=$(id -u $USER) -e LOCAL_GID=$(id -g $USER) foxy_desktop
+export UID=$(id -u $USER)
+export GID=$(id -g $USER)
+docker-compose run foxy_desktop
