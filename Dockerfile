@@ -33,7 +33,7 @@ RUN apt update && apt install -y --no-install-recommends \
     ros-foxy-desktop \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./entrypoint.sh /
+COPY ./ros_entrypoint.sh /
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
