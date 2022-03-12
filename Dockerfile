@@ -33,6 +33,8 @@ RUN apt update && apt install -y --no-install-recommends \
     ros-foxy-desktop \
     && rm -rf /var/lib/apt/lists/*
 
+RUN rosdep init && rosdep update
+
 COPY ./ros_entrypoint.sh /
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
